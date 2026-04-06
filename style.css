@@ -25,7 +25,8 @@ body {
     top: 2vh;
     left: 50%;
     transform: translateX(-50%);
-    width: min(900px, 90%);
+    /* width: min(900px, 90%); */
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
