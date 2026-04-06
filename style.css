@@ -257,3 +257,25 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     outline: none;
 }
+
+.project-top-content {
+    position: absolute;
+    inset: 12px 12px 12px 12px;
+    z-index: 2;
+}
+
+.project-top-content--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-top-content--icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid var(--border-light);
+    background: var(--button);
+    padding: 6px;
+}
