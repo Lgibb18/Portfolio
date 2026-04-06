@@ -1,14 +1,16 @@
 :root {
     --border: #17312e;
+    --border-light: #234740;
     --background: #050c14;
     --background-section: #0a141e;
     --button: #0d1a20;
+    --button-highlighted: #12262a;
     --tag: #152b2d;
     --text-secondary: #92a99f;
     --ligyb: #429e93;
     --section-width: min(1000px, 90%);
     --section-padding: 20px;
-    --section-name-padding: -5px;
+    --background-green: #091a17;
 }
 
 @font-face {
@@ -24,7 +26,7 @@ body {
         radial-gradient(circle at top, var(--background-section), transparent 40%),
         linear-gradient(180deg, var(--background) 0%, var(--background-section) 100%);
     color: white;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .top-panel {
@@ -124,7 +126,8 @@ body {
     color: white;
     width: var(--section-width);
     margin: 40px auto 0;
-    padding-inline: var(--section-name-padding);
+    padding-inline: 0;
+    transform: translateX(-5px);
     box-sizing: border-box;
 }
 
@@ -134,4 +137,123 @@ body {
 
 .section-name + .section-panel {
     margin-top: 10px;
+}
+
+.project-list {
+    width: var(--section-width);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    box-sizing: border-box;
+    margin: 15px auto 0;
+}
+
+.project-item {
+    flex: 0 0 calc((100% - 40px) / 3);
+    height: 450px;
+    background-color: var(--button);
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 3fr 4fr;
+    overflow: hidden;
+    color: var(--text-secondary);
+}
+
+.project-top {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--border);
+}
+
+.project-top-bg--image,
+.project-top-bg--image img {
+    width: 100%;
+    height: 100%;
+}
+
+.project-top-bg--image img {
+    display: block;
+    object-fit: cover;
+}
+
+.project-top-bg--gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, var(--background-green), rgba(0, 0, 0, 1));
+}
+
+.project-top-line {
+    position: absolute;
+    top: 0px;
+    width: 105%;
+    z-index: 2;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, var(--background-section), rgba(0, 0, 0, 0) 100%);
+}
+
+.project-path {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
+
+.project-bottom {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.project-title {
+    margin: 0px 0 6px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.project-description {
+    margin: 2px;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.tag {
+    display: inline-block;
+    padding: 10px 12px;
+    margin-top: 10px;
+    background-color: var(--tag);
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+    font-size: 12px;
+    margin-right: 6px;
+    color: white;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: var(--text-secondary);
+    background-color: var(--button);
+    padding: 10px 12px;
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+    color: white;
+    background-color: var(--button-highlighted);
+    border-color: var(--border);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    outline: none;
 }
