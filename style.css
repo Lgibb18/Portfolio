@@ -1,0 +1,36 @@
+:root {
+    --border: #17312e;
+    --background: #050c14;
+    --button: #0d1a20;
+    --tag: #152b2d;
+}
+
+@font-face {
+    font-family: 'Azeret Mono';
+    src: url('src/AzeretMono.ttf') format('truetype');
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: 'Azeret Mono', monospace;
+    background-color: var(--background);
+    color: white;
+}
+
+.top-panel {
+    z-index: 1000;
+    position: fixed;
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(900px, 90%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background);
+    color: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
