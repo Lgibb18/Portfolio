@@ -6,6 +6,9 @@
     --tag: #152b2d;
     --text-secondary: #92a99f;
     --ligyb: #429e93;
+    --section-width: min(1000px, 90%);
+    --section-padding: 20px;
+    --section-name-padding: -5px;
 }
 
 @font-face {
@@ -39,6 +42,7 @@ body {
     color: white;
     border: 2px solid var(--border);
     border-radius: 15px;
+    box-sizing: border-box;
 }
 
 .big {
@@ -82,12 +86,13 @@ body {
 
 .about {
     margin: 100px auto 0;
-    width: min(1000px, 90%);
-    padding: 20px;
+    width: var(--section-width);
+    padding: var(--section-padding);
     border: 2px solid var(--border);
     border-radius: 15px;
     display: flex;
     background-color: var(--background-section);
+    box-sizing: border-box;
 }
 
 .description {
@@ -103,9 +108,30 @@ body {
     margin-right: 20px;
 }
 
+.section-panel {
+    margin: 15px auto 0;
+    width: var(--section-width);
+    padding: var(--section-padding);
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    background-color: var(--background-section);
+    box-sizing: border-box;
+}
+
 .section-name {
     font-size: 1.2em;
     font-weight: bold;
     color: white;
-    margin-bottom: 10px;
+    width: var(--section-width);
+    margin: 40px auto 0;
+    padding-inline: var(--section-name-padding);
+    box-sizing: border-box;
+}
+
+.section-name h2 {
+    margin: 0;
+}
+
+.section-name + .section-panel {
+    margin-top: 10px;
 }
